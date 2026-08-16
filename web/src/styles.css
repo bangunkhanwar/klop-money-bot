@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #1c1b1a;
+  background: #fcf9f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --orange: #e86b32;
+  --orange-dark: #a13a00;
+  --cream: #fcf9f6;
+  --cream-deep: #f1eee9;
+  --brown: #584239;
+  --ink: #1c1b1a;
+  --green: #28a745;
+  --amber: #f5a623;
+  --red: #b91c1c;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--cream); }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--cream); }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid rgba(232, 107, 50, .28); outline-offset: 2px; }
+
+@layer components {
+  .card { @apply rounded-2xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(58,36,24,0.06)]; }
+  .panel { @apply rounded-xl border border-stone-200 bg-white; }
+  .btn-primary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#E86B32] px-5 py-2.5 font-['Plus_Jakarta_Sans'] text-sm font-bold text-white transition hover:bg-[#C4511C] disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-secondary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[#A13A00] bg-white px-5 py-2.5 font-['Plus_Jakarta_Sans'] text-sm font-semibold text-[#A13A00] transition hover:bg-orange-50 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-ghost { @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-stone-100; }
+  .input { @apply min-h-11 w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2.5 text-sm text-stone-900 placeholder:text-stone-400 focus:border-[#E86B32]; }
+  .label { @apply mb-1.5 block text-xs font-bold tracking-tight text-stone-700; }
+  .page-title { @apply font-['Plus_Jakarta_Sans'] text-xl font-bold leading-7 text-stone-900 md:text-2xl md:leading-8; }
+  .section-title { @apply font-['Plus_Jakarta_Sans'] text-lg font-bold leading-6 text-stone-900; }
+  .eyebrow { @apply text-[10px] font-bold uppercase leading-4 tracking-wide text-stone-600; }
+}
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; }
+.safe-bottom { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+.safe-top { padding-top: env(safe-area-inset-top); }
+
+@keyframes fade-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-up { animation: fade-up .28s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "klop-money",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["server", "web"],
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail --names API,PWA --prefix-colors yellow,cyan \"npm run dev --workspace server\" \"npm run dev --workspace web\"",
+    "dev:api": "concurrently --kill-others-on-fail --names API,PWA --prefix-colors yellow,cyan \"npm run start:api --workspace server\" \"npm run dev --workspace web\"",
+    "setup:sheets": "npm run setup:sheets --workspace server",
+    "build": "npm run build --workspace web",
+    "check": "npm run check --workspace server && npm run check --workspace web && npm run build --workspace web",
+    "start": "npm run start --workspace server"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

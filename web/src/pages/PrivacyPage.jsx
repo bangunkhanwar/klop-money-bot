@@ -1,0 +1,8 @@
+import { ArrowLeft, Database, EyeOff, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+export default function PrivacyPage() {
+  return <div className="mx-auto max-w-3xl space-y-5 animate-fade-up"><div className="flex items-center gap-3"><Link className="btn-ghost p-2" to="/account"><ArrowLeft size={20} /></Link><div><h1 className="page-title">Ringkasan Privasi</h1><p className="mt-1 text-xs text-stone-600">Cara data digunakan di Klop Money.</p></div></div>
+    <section className="card space-y-5 p-5 md:p-7"><div className="flex gap-3"><Database className="shrink-0 text-[#E86B32]" /><div><h2 className="text-sm font-bold">Data yang disimpan</h2><p className="mt-1 text-xs leading-5 text-stone-600">Nomor WhatsApp, profil, transaksi, budget, pairing, preferensi, dan foto profil terkompresi disimpan untuk menjalankan aplikasi.</p></div></div><div className="flex gap-3"><EyeOff className="shrink-0 text-[#E86B32]" /><div><h2 className="text-sm font-bold">Transaksi pribadi</h2><p className="mt-1 text-xs leading-5 text-stone-600">Anggota lain dalam workspace tidak dapat melihat kategori dan keterangan transaksi yang ditandai pribadi.</p></div></div><div className="flex gap-3"><ShieldCheck className="shrink-0 text-[#E86B32]" /><div><h2 className="text-sm font-bold">Keamanan akses</h2><p className="mt-1 text-xs leading-5 text-stone-600">Login memakai kode satu kali melalui WhatsApp. Jangan membagikan kode, kredensial server, atau akses Google Sheets.</p></div></div><p className="rounded-xl bg-amber-50 p-3 text-xs leading-5 text-amber-900">Dokumen ini adalah ringkasan fitur, bukan dokumen hukum final. Kebijakan resmi perlu ditinjau owner sebelum aplikasi dipublikasikan.</p></section>
+  </div>;
+}

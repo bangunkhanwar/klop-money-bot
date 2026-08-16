@@ -1,0 +1,28 @@
+# Dependencies dan hasil build
+node_modules/
+dist/
+.tmp/
+*.log
+
+# Konfigurasi lokal
+.env
+.env.*
+!.env.example
+
+# Data sensitif dan data runtime backend
+server/private/*
+!server/private/.gitkeep
+server/data/whitelist.json
+server/.wwebjs_auth/
+server/.wwebjs_cache/
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Sistem operasi dan editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+
+docs/New Dokumen Teks.txt
